@@ -77,15 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: GestureDetector(
                   onTap: () {
-                    isChnaged = !isChnaged;
-
-                    setState(() {});
-
-                    // Navigator.of(context).push(
-                    //   MaterialPageRoute(
-                    //     builder: (context) => const WelcomeScreen(),
-                    //   ),
-                    // );
+                    Navigator.pushNamed(context, '/grid-view');
                   },
                   child: Container(
                     height: 55,

@@ -1,5 +1,8 @@
+import 'package:demo_gdsc/grid_view_screen.dart';
 import 'package:demo_gdsc/home_page.dart';
+import 'package:demo_gdsc/list_view_screen.dart';
 import 'package:demo_gdsc/weclome_screen.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,9 +16,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Demo GDSC',
-      home: HomeScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomeScreen(),
+        '/welcome': (context) => WelcomeScreen(),
+        '/list-view': (context) => ListViewScreen(),
+        '/grid-view': (context) => GridViewScreen(),
+      },
     );
   }
 }
