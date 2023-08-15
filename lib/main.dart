@@ -1,5 +1,8 @@
+import 'package:demo_gdsc/grid_view_screen.dart';
 import 'package:demo_gdsc/home_page.dart';
+import 'package:demo_gdsc/list_view_screen.dart';
 import 'package:demo_gdsc/weclome_screen.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -7,18 +10,21 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({
+    super.key,
+  });
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const WelcomeScreen(),
+      title: 'Demo GDSC',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomeScreen(),
+        '/welcome': (context) => WelcomeScreen(),
+        '/list-view': (context) => ListViewScreen(),
+        '/grid-view': (context) => GridViewScreen(),
+      },
     );
   }
 }
